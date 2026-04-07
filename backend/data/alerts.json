@@ -1,5 +1,23 @@
 [
     {
+        "createdAt": 1775555950,
+        "id": "1e927ec8-9d90-4644-b1f0-2bbb77127c4c",
+        "isRead": false,
+        "message": "New Govt Scheme 'Green Bonds' offers 8.5% p.a.",
+        "type": 2,
+        "updatedAt": 1775555950,
+        "userId": "71c943a6-81a4-42a4-aded-6b12200f4cf7"
+    },
+    {
+        "createdAt": 1775555950,
+        "id": "315d89cd-06e9-4b3e-9e2e-74837ea23825",
+        "isRead": false,
+        "message": "You've exceeded 80% of your Essentials budget.",
+        "type": 3,
+        "updatedAt": 1775555950,
+        "userId": "71c943a6-81a4-42a4-aded-6b12200f4cf7"
+    },
+    {
         "createdAt": 1775496950,
         "id": "383f3bbe-18f6-400d-8826-ae7b037610ac",
         "isRead": false,
@@ -7,6 +25,15 @@
         "type": 2,
         "updatedAt": 1775496950,
         "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "createdAt": 1775571376,
+        "id": "49822f04-9ce7-41e4-a09b-5f8d508222aa",
+        "isRead": false,
+        "message": "Credit Card Bill due in 3 days ($45.00)",
+        "type": 0,
+        "updatedAt": 1775571376,
+        "userId": "ebb6cc58-ff93-457d-8d0f-8fa7da012578"
     },
     {
         "createdAt": 1775496950,
@@ -25,5 +52,32 @@
         "type": 0,
         "updatedAt": 1775496950,
         "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "createdAt": 1775555950,
+        "id": "a4cf880c-0062-4512-8c0c-bdb6f52ab414",
+        "isRead": false,
+        "message": "Credit Card Bill due in 3 days ($45.00)",
+        "type": 0,
+        "updatedAt": 1775555950,
+        "userId": "71c943a6-81a4-42a4-aded-6b12200f4cf7"
+    },
+    {
+        "createdAt": 1775571376,
+        "id": "c36e44e6-8c94-4ae4-840c-1901b2871d1e",
+        "isRead": false,
+        "message": "New Govt Scheme 'Green Bonds' offers 8.5% p.a.",
+        "type": 2,
+        "updatedAt": 1775571376,
+        "userId": "ebb6cc58-ff93-457d-8d0f-8fa7da012578"
+    },
+    {
+        "createdAt": 1775571376,
+        "id": "e1c331b5-2e17-4a67-a591-7c2e29681f25",
+        "isRead": false,
+        "message": "You've exceeded 80% of your Essentials budget.",
+        "type": 3,
+        "updatedAt": 1775571376,
+        "userId": "ebb6cc58-ff93-457d-8d0f-8fa7da012578"
     }
 ]

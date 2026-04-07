@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = "/api";
 
 const catMap = ["Food", "Transport", "Essentials", "Health", "EMI", "Savings", "Other", "Rent", "Entertainment", "Utilities", "Investment", "Insurance"];
 const typeMap = ["Bank Account", "Cash Wallet", "Credit Card", "Debit Card"];

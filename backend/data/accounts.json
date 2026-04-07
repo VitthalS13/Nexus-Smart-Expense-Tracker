@@ -10,6 +10,16 @@
         "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
     },
     {
+        "accountName": "Main Wallet",
+        "balance": 0.0,
+        "createdAt": 1775555773,
+        "currency": "USD",
+        "id": "34a94008-0c6c-4c48-95be-a5d2ac3ec1e7",
+        "type": 1,
+        "updatedAt": 1775555773,
+        "userId": "34532bfc-d54f-443e-880b-1d2e69d23603"
+    },
+    {
         "accountName": "SBI BANK",
         "balance": 5740.0,
         "createdAt": 1775489968,
@@ -28,5 +38,25 @@
         "type": 1,
         "updatedAt": 1775541651,
         "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "accountName": "Main Wallet",
+        "balance": 0.0,
+        "createdAt": 1775571355,
+        "currency": "USD",
+        "id": "b912f3a3-6b44-4276-b13b-1bcfd586f1ac",
+        "type": 1,
+        "updatedAt": 1775571355,
+        "userId": "ebb6cc58-ff93-457d-8d0f-8fa7da012578"
+    },
+    {
+        "accountName": "Main Wallet",
+        "balance": 0.0,
+        "createdAt": 1775555911,
+        "currency": "USD",
+        "id": "c09c596b-5b88-4d07-b593-57146e7a7e8f",
+        "type": 1,
+        "updatedAt": 1775555911,
+        "userId": "71c943a6-81a4-42a4-aded-6b12200f4cf7"
     }
 ]

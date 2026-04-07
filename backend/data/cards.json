@@ -13,6 +13,19 @@
         "updatedAt": 1775532612
     },
     {
+        "accountId": "c09c596b-5b88-4d07-b593-57146e7a7e8f",
+        "cardHolderName": "Likith",
+        "cardNumber": "4000 8622 8958 7475",
+        "createdAt": 1775556056,
+        "currentDailySpend": 0.0,
+        "cvv": "283",
+        "dailyLimit": 1e+43,
+        "expiryDate": "12/28",
+        "id": "d4e8501d-e258-46d8-94e6-2dfa243e344f",
+        "isFrozen": false,
+        "updatedAt": 1775556056
+    },
+    {
         "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
         "cardHolderName": "Vitthal Shedge",
         "cardNumber": "4000 8654 4816 6820",
