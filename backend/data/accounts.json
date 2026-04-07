@@ -1,0 +1,32 @@
+[
+    {
+        "accountName": "Main Wallet",
+        "balance": 5500.0,
+        "createdAt": 1775483051,
+        "currency": "USD",
+        "id": "03735ea5-19a1-4f37-8260-d340e7a92d35",
+        "type": 1,
+        "updatedAt": 1775531983,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "accountName": "SBI BANK",
+        "balance": 5740.0,
+        "createdAt": 1775489968,
+        "currency": "USD",
+        "id": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "type": 1,
+        "updatedAt": 1775534188,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "accountName": "ICICI BANK",
+        "balance": 37314.0,
+        "createdAt": 1775531937,
+        "currency": "USD",
+        "id": "b5ab0827-7c5c-4071-9918-cfd55e07d41d",
+        "type": 1,
+        "updatedAt": 1775541651,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    }
+]

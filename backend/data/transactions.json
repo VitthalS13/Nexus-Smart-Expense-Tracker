@@ -1,0 +1,110 @@
+[
+    {
+        "accountId": "b5ab0827-7c5c-4071-9918-cfd55e07d41d",
+        "amount": 5000.0,
+        "category": 5,
+        "createdAt": 1775531964,
+        "description": "stocks",
+        "id": "28db8cbf-fa96-4e01-af07-f6d125287950",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 1,
+        "updatedAt": 1775531964
+    },
+    {
+        "accountId": "03735ea5-19a1-4f37-8260-d340e7a92d35",
+        "amount": 5000.0,
+        "category": 6,
+        "createdAt": 1775531983,
+        "description": "stocks",
+        "id": "2ae8ca77-6149-4530-90da-765def3ea646",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 0,
+        "updatedAt": 1775531983
+    },
+    {
+        "accountId": "03735ea5-19a1-4f37-8260-d340e7a92d35",
+        "amount": 500.0,
+        "category": 7,
+        "createdAt": 1775483100,
+        "description": "food",
+        "id": "36cdc699-4704-461f-95e4-025ca1895ed8",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 0,
+        "updatedAt": 1775483100
+    },
+    {
+        "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "amount": 680.0,
+        "category": 1,
+        "createdAt": 1775534188,
+        "description": "rapido",
+        "id": "4980ddcf-ed36-4212-aa60-e356b841b65d",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 1,
+        "updatedAt": 1775534188
+    },
+    {
+        "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "amount": 500.0,
+        "category": 3,
+        "createdAt": 1775531777,
+        "description": "flu",
+        "id": "6b925443-000d-48a0-a1a1-8b8b6283a1be",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 1,
+        "updatedAt": 1775531777
+    },
+    {
+        "accountId": "b5ab0827-7c5c-4071-9918-cfd55e07d41d",
+        "amount": 32314.0,
+        "category": 12,
+        "createdAt": 1775541651,
+        "description": "12th salary",
+        "id": "7d249c6b-ef84-4314-a0f5-cc8963e377b1",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 0,
+        "updatedAt": 1775541651
+    },
+    {
+        "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "amount": 780.0,
+        "category": 0,
+        "createdAt": 1775494397,
+        "description": "food",
+        "id": "9db1d87f-d02f-4bef-9a26-499d56207e58",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 1,
+        "updatedAt": 1775494397
+    },
+    {
+        "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "amount": 300.0,
+        "category": 3,
+        "createdAt": 1775533716,
+        "description": "cold",
+        "id": "cd2b0f08-eaa1-45f7-9ebe-eaedf0f55b87",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 1,
+        "updatedAt": 1775533716
+    },
+    {
+        "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "amount": 2000.0,
+        "category": 1,
+        "createdAt": 1775490003,
+        "description": "train journey",
+        "id": "ceb4f4fa-5755-4dbd-82ee-398e8cc02056",
+        "linkedCardId": "",
+        "targetAccountId": "",
+        "type": 1,
+        "updatedAt": 1775490003
+    }
+]

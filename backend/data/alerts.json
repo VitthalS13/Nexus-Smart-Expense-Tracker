@@ -1,0 +1,29 @@
+[
+    {
+        "createdAt": 1775496950,
+        "id": "383f3bbe-18f6-400d-8826-ae7b037610ac",
+        "isRead": false,
+        "message": "New Govt Scheme 'Green Bonds' offers 8.5% p.a.",
+        "type": 2,
+        "updatedAt": 1775496950,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "createdAt": 1775496950,
+        "id": "7ded3240-e549-4ba1-905b-2068f77a8c59",
+        "isRead": false,
+        "message": "You've exceeded 80% of your Essentials budget.",
+        "type": 3,
+        "updatedAt": 1775496950,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "createdAt": 1775496950,
+        "id": "94698fdd-37e1-4617-9772-c69d5354f40e",
+        "isRead": false,
+        "message": "Credit Card Bill due in 3 days ($45.00)",
+        "type": 0,
+        "updatedAt": 1775496950,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    }
+]

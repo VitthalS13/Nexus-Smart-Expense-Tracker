@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    
+    <nav class="sidebar">
+        <div class="logo"><h2>Nexus</h2></div>
+        <ul class="nav-links">
+            <li class="active" onclick="switchView('dashboard')"><i class="fa fa-home"></i> Dashboard</li>
+            <li onclick="switchView('analytics')"><i class="fa fa-chart-pie"></i> Analytics</li>
+            <li onclick="switchView('cards')"><i class="fa fa-credit-card"></i> Virtual Cards</li>
+            <li onclick="switchView('budgets')"><i class="fa fa-bullseye"></i> Budgets</li>
+            <li onclick="switchView('history')"><i class="fa fa-history"></i> History</li>
+            <li onclick="openProfileModal()"><i class="fa fa-user"></i> Profile</li>
+            <li class="signout" onclick="logout()"><i class="fa fa-sign-out-alt"></i> Logout</li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-content" id="view-dashboard">
+        <header>
+            <div class="greeting">
+                <h1 id="greeting-text">Welcome back.</h1>
+                <p>Here's what's happening with your money today.</p>
+            </div>
+            <div class="header-actions">
+                <div class="alert-icon" onclick="toggleAlerts()">
+                    <i class="fa fa-bell"></i>
+                    <span class="alert-badge" id="alert-badge" style="display:none;">0</span>
+                    <div class="alerts-dropdown" id="alerts-dropdown">
+                        <div class="alert-item">Loading alerts...</div>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="openTransactionModal()">+ New Transaction</button>
+            </div>
+        </header>
+
+        <!-- Notification Panel for Investments/Alerts -->
+        <div id="notification-panel" class="notification-panel" style="display:none;"></div>
+
+        <div class="dash-with-sidebar">
+            <div class="dash-main">
+                <section class="overview-cards">
+                    <div class="card balance-card glass">
+                        <p>Total Net Worth</p>
+                        <h2 id="total-balance">$0.00</h2>
+                    </div>
+                    <div class="card income-card glass">
+                        <p>Monthly Income</p>
+                        <h2>$0.00</h2>
+                    </div>
+                    <div class="card expense-card glass">
+                        <p>Monthly Expense</p>
+                        <h2>$0.00</h2>
+                    </div>
+                </section>
+
+                <section class="main-grid">
+                    <div class="left-col">
+                        <div class="section-header">
+                            <h3>Your Accounts</h3>
+                            <button class="btn-text" onclick="openAccountModal()">+ Add</button>
+                        </div>
+                        <div class="accounts-list" id="accounts-list">
+                            <div class="loading">Loading accounts...</div>
+                        </div>
+                    </div>
+
+                    <div class="right-col">
+                        <div class="section-header">
+                            <h3>Recent Transactions</h3>
+                        </div>
+                        <div class="transactions-list" id="transactions-list">
+                            <div class="loading">Select an account to view transactions</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="news-panel">
+                <div class="news-header"><h3>Market News & Tips</h3></div>
+                <div id="news-list">
+                    <div class="loading" style="font-size:0.9rem; margin-top: 1rem;">Loading market news...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Analytics View -->
+    <main class="dashboard-content" id="view-analytics" style="display: none;">
+        <header>
+            <div class="greeting">
+                <h1>Analytics & Insights</h1>
+                <p>Visualize your financial distribution and spending habits.</p>
+            </div>
+        </header>
+        <section class="charts-grid">
+            <div class="chart-container glass">
+                <h3>Wealth Distribution</h3>
+                <canvas id="wealthChart"></canvas>
+            </div>
+            <div class="chart-container glass">
+                <h3>Spending by Category</h3>
+                <canvas id="categoryChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <!-- Virtual Cards View -->
+    <main class="dashboard-content" id="view-cards" style="display: none;">
+        <header>
+            <div class="greeting">
+                <h1>Virtual Cards</h1>
+                <p>Manage your linked Credit and Debit cards securely.</p>
+            </div>
+            <button class="btn-primary" onclick="openCardModal()">+ Create Card</button>
+        </header>
+        <section>
+            <div class="section-header">
+                <h3>Select Account context</h3>
+                <select id="card-context-account" onchange="loadCardsForAccount(this.value)" style="margin: 0;">
+                    <!-- Populated via JS -->
+                </select>
+            </div>
+            <div class="cards-list" id="cards-list">
+                <div class="loading">Select an account to view linked cards.</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Budgets View -->
+    <main class="dashboard-content" id="view-budgets" style="display: none;">
+        <header>
+            <div class="greeting">
+                <h1>Smart Budgeting</h1>
+                <p>Plan your salary allocation securely.</p>
+            </div>
+        </header>
+        <section>
+            <div class="budget-allocator" style="flex-direction: column; align-items: stretch; gap: 1.5rem;">
+                <div>
+                    <h3>Advanced Budget Planner</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">Add custom budgets or let us auto-allocate from your salary.</p>
+                </div>
+                <!-- Salary Auto-Compute Helper -->
+                <div style="display: flex; gap: 1rem; align-items: center; background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+                     <input type="number" id="budget-salary" placeholder="Monthly Salary ($)" step="1" style="flex:1;">
+                     <button class="btn-primary" onclick="allocateBudgets()"><i class="fa fa-magic"></i> Auto-Allocate Plan</button>
+                </div>
+                
+                <!-- Manual Add Custom Budget Form -->
+                <div class="manual-budget-form" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                    <h4>Add Custom Budget</h4>
+                    <form onsubmit="handleAddCustomBudget(event)" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                        <select id="custom-budget-category" required style="flex: 1; min-width: 150px;">
+                            <option value="">Select Category</option>
+                            <option value="10">Investment</option>
+                            <option value="5">Savings</option>
+                            <option value="4">EMI</option>
+                            <option value="2">Essentials</option>
+                            <option value="11">Insurance</option>
+                            <option value="6">Other</option>
+                        </select>
+                        <input type="text" id="custom-budget-name" placeholder="Name (e.g. Retirement Fund)" required style="flex: 1.5; min-width: 200px;">
+                        <input type="number" id="custom-budget-limit" placeholder="Limit ($)" step="0.01" required style="flex: 1; min-width: 120px;">
+                        <button type="submit" class="btn-primary" style="flex: 0 0 auto;">+ Add</button>
+                    </form>
+                </div>
+            </div>
+            <div class="section-header">
+                <h3>Current Budgets vs Spending</h3>
+            </div>
+            <div class="budget-cards" id="budget-cards-container">
+                <div class="loading">Loading budgets...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- History View -->
+    <main class="dashboard-content" id="view-history" style="display: none;">
+        <header>
+            <div class="greeting">
+                <h1>Transaction History</h1>
+                <p>Complete history across all your accounts.</p>
+            </div>
+        </header>
+        <section class="glass" style="padding: 1.5rem; overflow-x: auto;">
+            <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 1px solid var(--glass-border); color: var(--text-secondary);">
+                        <th style="padding: 1rem 0;">Account</th>
+                        <th style="padding: 1rem 0;">Description</th>
+                        <th style="padding: 1rem 0;">Category</th>
+                        <th style="padding: 1rem 0;">Type</th>
+                        <th style="padding: 1rem 0;">Amount</th>
+                        <th style="padding: 1rem 0;">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="full-history-list">
+                    <tr><td colspan="6" class="loading">Loading history...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modals -->
+
+    <!-- Transaction Modal -->
+    <div id="tx-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tx-modal')">&times;</span>
+            <h2>New Transaction</h2>
+            <form onsubmit="handleTransactionSubmit(event)">
+                <select id="tx-account" required>
+                    <option value="">Select Account</option>
+                    <option disabled>──────────</option>
+                    <option value="new_bank">+ Add New Bank Account</option>
+                    <option value="new_card">+ Add New Credit/Debit Card</option>
+                </select>
+                <select id="tx-type" onchange="updateTransactionCategories('tx-category', this.value)" required>
+                    <option value="">Select Flow</option>
+                    <option value="1">Expense</option>
+                    <option value="0">Income</option>
+                </select>
+                <select id="tx-category" required>
+                    <option value="">Select Category</option>
+                </select>
+                <input type="number" id="tx-amount" step="0.01" placeholder="Amount ($)" required>
+                <input type="text" id="tx-desc" placeholder="Description (Optional)" required>
+                <button type="submit" class="btn-primary full-width">Post Transaction</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div id="acc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('acc-modal')">&times;</span>
+            <h2>New Account</h2>
+            <form onsubmit="handleAccountSubmit(event)">
+                <input type="text" id="acc-name" placeholder="Account Name (e.g. Chase Bank, XYZ Bank)" required>
+                <select id="acc-type" required>
+                    <option value="0">Bank Account</option>
+                    <option value="1">Cash Wallet</option>
+                    <option value="2">Credit Card</option>
+                    <option value="3">Debit Card</option>
+                </select>
+                <input type="number" id="acc-bal" step="0.01" placeholder="Initial Balance ($)" required>
+                <button type="submit" class="btn-primary full-width">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Virtual Card Modal -->
+    <div id="card-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('card-modal')">&times;</span>
+            <h2>Create Virtual Card</h2>
+            <form onsubmit="handleCardSubmit(event)">
+                <select id="new-card-account" required>
+                    <!-- Populated via JS -->
+                </select>
+                <input type="text" id="card-holder" placeholder="Cardholder Name" required>
+                <input type="number" id="card-limit" step="1" placeholder="Daily Spending Limit ($)" required>
+                <button type="submit" class="btn-primary full-width">Generate Secure Card</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('profile-modal')">&times;</span>
+            <h2>Your Profile</h2>
+            <div id="profile-details" style="margin-top: 1rem; color: var(--text-secondary);">
+                Loading...
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-tx-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('edit-tx-modal')">&times;</span>
+            <h2>Edit Transaction</h2>
+            <form id="edit-form" onsubmit="handleEditTransactionSubmit(event)">
+                <input type="hidden" id="edit-tx-id">
+                <input type="hidden" id="edit-tx-type">
+                
+                <select id="edit-tx-category" required>
+                    <!-- Populated via JS -->
+                </select>
+                <input type="number" id="edit-tx-amount" step="0.01" placeholder="Amount ($)" required>
+                <input type="text" id="edit-tx-desc" placeholder="Description" required>
+                <button type="submit" id="edit-tx-submit-btn" class="btn-primary full-width">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Account Modal -->
+    <div id="edit-acc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('edit-acc-modal')">&times;</span>
+            <h2>Edit Account</h2>
+            <form onsubmit="handleEditAccountSubmit(event)">
+                <input type="hidden" id="edit-acc-id">
+                <input type="text" id="edit-acc-name" placeholder="Account Name" required>
+                <button type="submit" class="btn-primary full-width">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Budget Modal -->
+    <div id="edit-budget-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('edit-budget-modal')">&times;</span>
+            <h2>Edit Budget</h2>
+            <form onsubmit="handleEditBudgetSubmit(event)">
+                <input type="hidden" id="edit-budget-id">
+                <input type="text" id="edit-budget-name" placeholder="Custom Name" required>
+                <input type="number" id="edit-budget-limit" step="0.01" placeholder="Limit ($)" required>
+                <button type="submit" class="btn-primary full-width">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        if (!localStorage.getItem("nexus_user_id")) {
+            window.location.href = "index.html";
+        } else {
+            loadDashboard();
+        }
+    </script>
+</body>
+</html>

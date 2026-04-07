@@ -1,0 +1,86 @@
+[
+    {
+        "category": 11,
+        "createdAt": 1775547057,
+        "currentSpent": 0.0,
+        "id": "04376832-46b3-4508-aa40-f7c5ecbbf2b8",
+        "limitAmount": 5000.0,
+        "name": "tata stock ",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547057,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "category": 11,
+        "createdAt": 1775547020,
+        "currentSpent": 0.0,
+        "id": "1a7a4784-4508-4dfa-887c-5e97e857d6af",
+        "limitAmount": 49382.700000000004,
+        "name": "Insurance Policy",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547020,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "category": 6,
+        "createdAt": 1775547020,
+        "currentSpent": 0.0,
+        "id": "2a10aee5-a577-48d2-bffa-cf125564cb99",
+        "limitAmount": 98765.40000000001,
+        "name": "Miscellaneous",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547020,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "category": 10,
+        "createdAt": 1775547020,
+        "currentSpent": 0.0,
+        "id": "35a3ef6a-d1fa-4827-aa12-1d43ef496e4e",
+        "limitAmount": 148148.1,
+        "name": "Primary Investments",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547020,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "category": 4,
+        "createdAt": 1775547020,
+        "currentSpent": 0.0,
+        "id": "a256a19a-51f1-451a-b461-292e75a93193",
+        "limitAmount": 197530.80000000002,
+        "name": "EMI Allocation",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547020,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "category": 5,
+        "createdAt": 1775547020,
+        "currentSpent": 0.0,
+        "id": "bb5389ad-12ec-413f-a8c9-ff5c97f9e998",
+        "limitAmount": 197530.80000000002,
+        "name": "Savings Goal",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547020,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    },
+    {
+        "category": 2,
+        "createdAt": 1775547020,
+        "currentSpent": 0.0,
+        "id": "e6209c80-15ee-437c-9ad7-4ea542cb1db8",
+        "limitAmount": 296296.2,
+        "name": "Monthly Essentials",
+        "periodType": "Monthly",
+        "targetValue": 0,
+        "updatedAt": 1775547020,
+        "userId": "846598de-3b1e-4ab3-a2ac-ef76989aa0bc"
+    }
+]

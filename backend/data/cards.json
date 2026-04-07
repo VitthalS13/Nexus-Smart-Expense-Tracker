@@ -1,0 +1,28 @@
+[
+    {
+        "accountId": "b5ab0827-7c5c-4071-9918-cfd55e07d41d",
+        "cardHolderName": "V. D. Shendge",
+        "cardNumber": "4000 3491 4616 9049",
+        "createdAt": 1775532612,
+        "currentDailySpend": 0.0,
+        "cvv": "998",
+        "dailyLimit": 50000.0,
+        "expiryDate": "12/28",
+        "id": "1f510901-eaa9-4244-b987-a207f0512fc8",
+        "isFrozen": false,
+        "updatedAt": 1775532612
+    },
+    {
+        "accountId": "9be36d2a-b636-46e6-b822-d13a1c98572d",
+        "cardHolderName": "Vitthal Shedge",
+        "cardNumber": "4000 8654 4816 6820",
+        "createdAt": 1775531862,
+        "currentDailySpend": 0.0,
+        "cvv": "527",
+        "dailyLimit": 100000.0,
+        "expiryDate": "12/28",
+        "id": "dd5330ea-aca3-4555-9ba7-bd124299aec8",
+        "isFrozen": false,
+        "updatedAt": 1775531862
+    }
+]

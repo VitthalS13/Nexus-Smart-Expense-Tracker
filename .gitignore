@@ -1,0 +1,17 @@
+# Ignore build objects and executables
+*.exe
+*.o
+*.obj
+*.out
+
+# Ignore database storage files (to protect mock privacy/data)
+backend/src/*.json
+!backend/include/json.hpp
+
+# Ignore the huge downloaded compiler
+w64devkit/
+w64devkit.zip
+
+# System files
+.DS_Store
+Thumbs.db
